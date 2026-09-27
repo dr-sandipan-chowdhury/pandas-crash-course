@@ -1,8 +1,12 @@
+<p align="center">
+  <img src="./banner.png" alt="Pandas — All-in-One Crash Course Banner" width="100%">
+</p>
+
 # Pandas — All-in-One Crash Course
 
 This is a **from-zero → advanced practical Pandas** course. The goal is that after this, you can take a CSV/Excel/JSON dataset, clean it, manipulate it, analyze it, join multiple datasets, reshape it, and export the result without constantly looking up syntax.
 
-The examples use the current **pandas 3.0.x API**. pandas 3.0 introduced a dedicated default string dtype and made Copy-on-Write the default, so a few older tutorials behave differently. ([Pandas][1])
+The examples use the current **pandas 3.0.x API**. pandas 3.0 introduced a dedicated default string dtype and made Copy-on-Write the default, so a few older tutorials behave differently. ([1](https://pandas.pydata.org/community/blog/pandas-3.0.html))
 
 ---
 
@@ -774,7 +778,7 @@ Regex:
 df["text"].str.extract(r"(\d+)")
 ```
 
-Pandas 3.0 now infers ordinary string data using the dedicated `str` dtype rather than the historical `object` dtype. ([Pandas][2])
+Pandas 3.0 now infers ordinary string data using the dedicated `str` dtype rather than the historical `object` dtype. ([2](https://pandas.pydata.org/docs/user_guide/migration-3-strings.html))
 
 ---
 
@@ -865,7 +869,7 @@ df.apply(
 )
 ```
 
-But don't automatically reach for `apply`. Native vectorized operations and specialized `groupby` methods are generally preferable for performance. The Pandas documentation specifically notes that `groupby.apply()` can be substantially slower than more specific operations such as `agg()` or `transform()`. ([Pandas][3])
+But don't automatically reach for `apply`. Native vectorized operations and specialized `groupby` methods are generally preferable for performance. The Pandas documentation specifically notes that `groupby.apply()` can be substantially slower than more specific operations such as `agg()` or `transform()`. ([3](https://pandas.pydata.org/docs/reference/api/pandas.api.typing.SeriesGroupBy.apply.html))
 
 Bad:
 
@@ -976,7 +980,7 @@ apply
 combine
 ```
 
-That's exactly how Pandas describes `groupby`. ([Pandas][4])
+That's exactly how Pandas describes `groupby`. ([4](https://pandas.pydata.org/docs/user_guide/groupby.html))
 
 Example:
 
@@ -1168,7 +1172,7 @@ df.groupby("department").apply(
 
 Extremely flexible.
 
-But use it only when a more specific method doesn't solve the problem. ([Pandas][5])
+But use it only when a more specific method doesn't solve the problem. ([5](https://pandas.pydata.org/docs/reference/api/pandas.api.typing.DataFrameGroupBy.apply.html))
 
 ---
 
@@ -1417,7 +1421,7 @@ pd.concat(
 )
 ```
 
-Pandas documents `concat()` as combining objects along a shared index/axis. ([Pandas][6])
+Pandas documents `concat()` as combining objects along a shared index/axis. ([6](https://pandas.pydata.org/docs/user_guide/merging.html))
 
 ---
 
@@ -1539,7 +1543,7 @@ right    RIGHT + matching LEFT
 outer    LEFT ∪ RIGHT
 ```
 
-Pandas' `merge()` provides SQL-style joins. ([Pandas][6])
+Pandas' `merge()` provides SQL-style joins. ([6](https://pandas.pydata.org/docs/user_guide/merging.html))
 
 ---
 
@@ -1671,7 +1675,7 @@ long = df.melt(
 )
 ```
 
-Pandas provides `melt()` for unpivoting wide data. ([Pandas][7])
+Pandas provides `melt()` for unpivoting wide data. ([7](https://pandas.pydata.org/docs/user_guide/reshaping.html))
 
 ---
 
@@ -1705,7 +1709,7 @@ table = pd.pivot_table(
 )
 ```
 
-This is essentially a spreadsheet-style pivot table. ([Pandas][8])
+This is essentially a spreadsheet-style pivot table. ([8](https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html))
 
 ---
 
@@ -1758,7 +1762,7 @@ B         metformin
 B         insulin
 ```
 
-Pandas includes `explode()` specifically for turning list-like entries into individual rows. ([Pandas][7])
+Pandas includes `explode()` specifically for turning list-like entries into individual rows. ([7](https://pandas.pydata.org/docs/user_guide/reshaping.html))
 
 ---
 
@@ -1942,7 +1946,7 @@ tables = pd.read_html("page.html")
 df = pd.read_parquet("data.parquet")
 ```
 
-Pandas' IO system includes readers/writers for CSV, Excel, JSON, HTML, XML, Parquet and other formats. ([Pandas][9])
+Pandas' IO system includes readers/writers for CSV, Excel, JSON, HTML, XML, Parquet and other formats. ([9](https://pandas.pydata.org/docs/user_guide/io.html?highlight=parquet))
 
 ---
 
@@ -2067,7 +2071,7 @@ Parquet:
 df.to_parquet("output.parquet")
 ```
 
-Parquet is particularly useful for analytical workflows and supports column selection and partitioned datasets. ([Pandas][10])
+Parquet is particularly useful for analytical workflows and supports column selection and partitioned datasets. ([10](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_parquet.html))
 
 ---
 
@@ -2308,7 +2312,7 @@ df.set_index(
 )["salary"].unstack()
 ```
 
-Pandas includes `stack()` and `unstack()` among its primary reshaping tools. ([Pandas][7])
+Pandas includes `stack()` and `unstack()` among its primary reshaping tools. ([7](https://pandas.pydata.org/docs/user_guide/reshaping.html))
 
 ---
 
@@ -2487,7 +2491,7 @@ df["age"] = pd.to_numeric(
 )
 ```
 
-For genuinely huge datasets, chunking, efficient dtypes, and sometimes other tools are preferable to simply throwing more RAM at the DataFrame; the Pandas guide has a dedicated scaling/performance section. ([Pandas][11])
+For genuinely huge datasets, chunking, efficient dtypes, and sometimes other tools are preferable to simply throwing more RAM at the DataFrame; the Pandas guide has a dedicated scaling/performance section. ([11](https://pandas.pydata.org/docs/user_guide/))
 
 ---
 
@@ -2581,7 +2585,7 @@ Useful for building reusable pipelines.
 
 # 92. Copy-on-Write in Pandas 3
 
-Pandas 3.0 uses **Copy-on-Write by default**. ([Pandas][12])
+Pandas 3.0 uses **Copy-on-Write by default**. ([12](https://pandas.pydata.org/docs/user_guide/copy_on_write.html))
 
 So prefer explicit assignment:
 
@@ -2595,7 +2599,7 @@ rather than old chained-assignment patterns like:
 df["status"][df["age"] > 18] = "Adult"
 ```
 
-The latter is no longer a valid mutation pattern under the new rules. ([Pandas][1])
+The latter is no longer a valid mutation pattern under the new rules. ([1](https://pandas.pydata.org/community/blog/pandas-3.0.html))
 
 The golden rule:
 
@@ -3178,18 +3182,18 @@ df.to_html()
 5. method chaining
 ```
 
-Once those five become second nature, most everyday Pandas stops feeling like a library of random functions and starts feeling like a small data-manipulation language. Pandas' current documentation is organized around essentially these same fundamentals: selection, missing data, merge, grouping, reshaping, time series, and I/O. ([Pandas][11])
+Once those five become second nature, most everyday Pandas stops feeling like a library of random functions and starts feeling like a small data-manipulation language. Pandas' current documentation is organized around essentially these same fundamentals: selection, missing data, merge, grouping, reshaping, time series, and I/O. ([11](https://pandas.pydata.org/docs/user_guide/))
 
 # Reference
-1. [pandas - Python Data Analysis Library](https://pandas.pydata.org/community/blog/pandas-3.0.html?utm_source=chatgpt.com)
-2. [Migration guide for the new string data type (pandas 3.0) — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/migration-3-strings.html?utm_source=chatgpt.com)
-3. [pandas.api.typing.SeriesGroupBy.apply — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/reference/api/pandas.api.typing.SeriesGroupBy.apply.html?utm_source=chatgpt.com)
-4. [Group by: split-apply-combine — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/groupby.html?utm_source=chatgpt.com)
-5. [pandas.api.typing.DataFrameGroupBy.apply — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/reference/api/pandas.api.typing.DataFrameGroupBy.apply.html?utm_source=chatgpt.com)
-6. [Merge, join, concatenate and compare — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/merging.html?utm_source=chatgpt.com)
-7. [Reshaping and pivot tables — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/reshaping.html?utm_source=chatgpt.com)
-8. [pandas.pivot_table — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html?utm_source=chatgpt.com)
-9. [IO tools (text, CSV, HDF5, …) — pandas 3.0.4 documentation](https://pandas.pydata.org/docs/user_guide/io.html?highlight=parquet&utm_source=chatgpt.com)
-10. [pandas.DataFrame.to_parquet — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_parquet.html?utm_source=chatgpt.com)
-11. [User Guide — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/?utm_source=chatgpt.com)
-12. [Copy-on-Write (CoW) — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/copy_on_write.html?utm_source=chatgpt.com)
+1. [pandas - Python Data Analysis Library](https://pandas.pydata.org/community/blog/pandas-3.0.html)
+2. [Migration guide for the new string data type (pandas 3.0) — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/migration-3-strings.html)
+3. [pandas.api.typing.SeriesGroupBy.apply — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/reference/api/pandas.api.typing.SeriesGroupBy.apply.html)
+4. [Group by: split-apply-combine — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/groupby.html)
+5. [pandas.api.typing.DataFrameGroupBy.apply — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/reference/api/pandas.api.typing.DataFrameGroupBy.apply.html)
+6. [Merge, join, concatenate and compare — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/merging.html)
+7. [Reshaping and pivot tables — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/reshaping.html)
+8. [pandas.pivot_table — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html)
+9. [IO tools (text, CSV, HDF5, …) — pandas 3.0.4 documentation](https://pandas.pydata.org/docs/user_guide/io.html?highlight=parquet)
+10. [pandas.DataFrame.to_parquet — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_parquet.html)
+11. [User Guide — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/)
+12. [Copy-on-Write (CoW) — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/copy_on_write.html)
