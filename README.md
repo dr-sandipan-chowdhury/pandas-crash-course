@@ -3181,15 +3181,15 @@ df.to_html()
 Once those five become second nature, most everyday Pandas stops feeling like a library of random functions and starts feeling like a small data-manipulation language. Pandas' current documentation is organized around essentially these same fundamentals: selection, missing data, merge, grouping, reshaping, time series, and I/O. ([Pandas][11])
 
 # Reference
-[1]: https://pandas.pydata.org/community/blog/pandas-3.0.html?utm_source=chatgpt.com "pandas - Python Data Analysis Library"
-[2]: https://pandas.pydata.org/docs/user_guide/migration-3-strings.html?utm_source=chatgpt.com "Migration guide for the new string data type (pandas 3.0) — pandas 3.0.6 documentation"
-[3]: https://pandas.pydata.org/docs/reference/api/pandas.api.typing.SeriesGroupBy.apply.html?utm_source=chatgpt.com "pandas.api.typing.SeriesGroupBy.apply — pandas 3.0.6 documentation"
-[4]: https://pandas.pydata.org/docs/user_guide/groupby.html?utm_source=chatgpt.com "Group by: split-apply-combine — pandas 3.0.6 documentation"
-[5]: https://pandas.pydata.org/docs/reference/api/pandas.api.typing.DataFrameGroupBy.apply.html?utm_source=chatgpt.com "pandas.api.typing.DataFrameGroupBy.apply — pandas 3.0.6 documentation"
-[6]: https://pandas.pydata.org/docs/user_guide/merging.html?utm_source=chatgpt.com "Merge, join, concatenate and compare — pandas 3.0.6 documentation"
-[7]: https://pandas.pydata.org/docs/user_guide/reshaping.html?utm_source=chatgpt.com "Reshaping and pivot tables — pandas 3.0.6 documentation"
-[8]: https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html?utm_source=chatgpt.com "pandas.pivot_table — pandas 3.0.6 documentation"
-[9]: https://pandas.pydata.org/docs/user_guide/io.html?highlight=parquet&utm_source=chatgpt.com "IO tools (text, CSV, HDF5, …) — pandas 3.0.4 documentation"
-[10]: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_parquet.html?utm_source=chatgpt.com "pandas.DataFrame.to_parquet — pandas 3.0.6 documentation"
-[11]: https://pandas.pydata.org/docs/user_guide/?utm_source=chatgpt.com "User Guide — pandas 3.0.6 documentation"
-[12]: https://pandas.pydata.org/docs/user_guide/copy_on_write.html?utm_source=chatgpt.com "Copy-on-Write (CoW) — pandas 3.0.6 documentation"
+1. [pandas - Python Data Analysis Library](https://pandas.pydata.org/community/blog/pandas-3.0.html?utm_source=chatgpt.com)
+2. [Migration guide for the new string data type (pandas 3.0) — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/migration-3-strings.html?utm_source=chatgpt.com)
+3. [pandas.api.typing.SeriesGroupBy.apply — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/reference/api/pandas.api.typing.SeriesGroupBy.apply.html?utm_source=chatgpt.com)
+4. [Group by: split-apply-combine — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/groupby.html?utm_source=chatgpt.com)
+5. [pandas.api.typing.DataFrameGroupBy.apply — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/reference/api/pandas.api.typing.DataFrameGroupBy.apply.html?utm_source=chatgpt.com)
+6. [Merge, join, concatenate and compare — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/merging.html?utm_source=chatgpt.com)
+7. [Reshaping and pivot tables — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/reshaping.html?utm_source=chatgpt.com)
+8. [pandas.pivot_table — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/reference/api/pandas.pivot_table.html?utm_source=chatgpt.com)
+9. [IO tools (text, CSV, HDF5, …) — pandas 3.0.4 documentation](https://pandas.pydata.org/docs/user_guide/io.html?highlight=parquet&utm_source=chatgpt.com)
+10. [pandas.DataFrame.to_parquet — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_parquet.html?utm_source=chatgpt.com)
+11. [User Guide — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/?utm_source=chatgpt.com)
+12. [Copy-on-Write (CoW) — pandas 3.0.6 documentation](https://pandas.pydata.org/docs/user_guide/copy_on_write.html?utm_source=chatgpt.com)
