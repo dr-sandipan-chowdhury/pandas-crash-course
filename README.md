@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./banner.png" alt="Pandas — All-in-One Crash Course Banner" width="100%">
+  <img src="./banner-pandas.png" alt="Pandas — All-in-One Crash Course Banner" width="100%">
 </p>
 
 # Pandas — All-in-One Crash Course
